@@ -1,0 +1,177 @@
+nav {
+  width: 100%;
+  height: 76px;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.098);
+  background-color: white;
+
+  .topbar {
+    width: 100%;
+    max-width: 1010px;
+    height: 25px;
+    padding: 26px 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .branding {
+      height: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      flex-grow: 1;
+      flex-shrink: 9999;
+      flex-basis: 0%;
+      
+      a {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        div {
+          background-image: url(../../assets/sprite-glyphs.png);
+          background-size: 312px 298px;
+          background-repeat: no-repeat;
+        }
+
+        .glyph {
+          background-position: -50px -199px;
+          width: 24px;
+          height: 24px;
+        }
+
+        .typelogo {
+          background-position: -92px -71px;
+          width: 103px;
+          height: 29px;
+          margin-top: 7px;
+        }
+
+        .divider {
+          width: 1px;
+          height: 28px;
+          background-color: #262626;
+          margin: 0 16px;
+        }
+      }
+    }
+
+    .searchbar {
+      width: 225px;
+      min-height: 28px;
+      padding: 7px;
+
+      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: auto;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      color: #999;
+      border: solid 1px #dbdbdb;
+      border-radius: 3px;
+      background-color: rgb(250, 250, 250);
+      padding: 3px 3px 3px 10px;
+
+      .search-glyph {
+        flex-grow: 0;
+
+        height: 10px;
+        width: 12px;
+        background-image: url('../../assets/sprite-core.png');
+        background-size: 410px 396px;
+        background-position-x: -239px;
+        background-position-y: -366px;
+        display: inline-block;
+      }
+
+      .search-input {
+        flex-grow: 1;
+        margin-left: 3px;
+        height: 20px;
+
+        &:placeholder-shown {
+          text-align: center;
+        }
+
+        &:focus {
+          text-align: left;
+
+          &:placeholder-shown {
+            opacity: 0.4;
+          }
+        }
+      }
+
+      .search-clear-glyph {
+        flex-grow: 0;
+
+        height: 20px;
+        width: 20px;
+        background-image: url('../../assets/sprite-core.png');
+        background-size: 410px 396px;
+        background-position-x: -379px;
+        background-position-y: -212px;
+        visibility: hidden;
+      }
+
+      &:focus-within {
+        .search-clear-glyph {
+          visibility: visible;
+        }
+      }
+    }
+
+    .navlinks {
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-basis: 0%;
+
+      .glyph-container {
+        margin-left: 30px;
+        cursor: pointer;
+
+        &:first-child {
+          margin-left: 0px;
+        }
+      }
+
+      span {
+        background-image: url(../../assets/sprite-glyphs.png);
+        background-size: 312px 298px;
+        background-repeat: no-repeat;
+
+        width: 24px;
+        height: 24px;
+        display: block;
+      }
+
+      .explore-glyph {
+        background-position: -288px -175px;
+      }
+
+      .heart-glyph {
+        background-position: -263px -50px;
+      }
+
+      .profile-glyph {
+        background-position: -175px -224px;
+      }
+
+    }
+  }
+}
