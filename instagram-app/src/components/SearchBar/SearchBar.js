@@ -1,9 +1,6 @@
 import React from 'react';
 import './SearchBar.scss';
 
-import glyph from './assets/glyph.png';
-import typelogo from './assets/typelogo.png';
-
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
