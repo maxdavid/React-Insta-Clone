@@ -40,6 +40,15 @@ class PostContainer extends React.Component {
           <button>
             <span className='heart-glyph' />
           </button>
+          <button>
+            <span className='comment-glyph' />
+          </button>
+          <button>
+            <span className='share-glyph' />
+          </button>
+          <button className='right-align'>
+            <span className='bookmark-glyph' />
+          </button>
         </div>
 
       <CommentSection userData={this.state.userData} comments={comments} timestamp={timestamp} />

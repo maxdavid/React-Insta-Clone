@@ -66,14 +66,40 @@
       height: 40px;
       outline: none;
 
-      .heart-glyph {
+      %interaction-glyph {
         background-image: url('../../assets/sprite-glyphs.png');
         background-size: 337px 298px;
-        background-position-x: -263px;
-        background-position-y: -125px;
         width: 24px;
         height: 24px;
-        display: block;
+        display: inline-block;
+      }
+
+      .heart-glyph {
+        @extend %interaction-glyph;
+        background-position-x: -263px;
+        background-position-y: -125px;
+      }
+
+      .comment-glyph {
+        @extend %interaction-glyph;
+        background-position-x: -50px;
+        background-position-y: -199px;
+      }
+
+      .share-glyph {
+        @extend %interaction-glyph;
+        background-position-x: -225px;
+        background-position-y: -274px;
+      }
+
+      .bookmark-glyph {
+        @extend %interaction-glyph;
+        background-position-x: -100px;
+        background-position-y: -274px;
+      }
+
+      &.right-align {
+        margin-left: auto;
       }
     }
   }
