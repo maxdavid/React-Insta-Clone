@@ -36,7 +36,7 @@ class PostContainer extends React.Component {
           </button>
         </div>
 
-      <CommentSection comments={this.state.comments} />
+      <CommentSection comments={this.state.comments} timestamp={this.state.timestamp} />
 
       </article>
     )
