@@ -14,13 +14,13 @@ class PostContainer extends React.Component {
       <article className='post-container'>
         <header>
           <div className='poster-avatar'>
-            <a>
+            <a href='/'>
               <img src={this.state.thumbnailUrl} alt="{this.state.username}'s profile picture" />
             </a>
           </div>
           <div className='poster-handle'>
             <h2>
-              <a href='' title={this.state.username}>
+              <a href='/' title={this.state.username}>
                 {this.state.username}
               </a>
             </h2>

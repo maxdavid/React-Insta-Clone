@@ -20,7 +20,7 @@ class CommentSection extends React.Component {
       <div className='comment-section'>
         <ul>
           {comments.map((comment) => (
-            <Comment data={comment} />
+            <Comment data={comment} key={comment.id} />
           ))}
         </ul>
 

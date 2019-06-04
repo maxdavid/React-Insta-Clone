@@ -1,5 +1,5 @@
 import React from 'react';
-import './CommentSection.scss';
+import './CommentSection.scss'
 
 class Comment extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class Comment extends React.Component {
     return (
       <li className='comment'>
         <h2 className='username'>
-          <a>{username}</a>
+          <a href='/'>{username}</a>
         </h2>
         <span>{text}</span>
       </li>

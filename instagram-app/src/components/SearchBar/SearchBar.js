@@ -2,10 +2,6 @@ import React from 'react';
 import './SearchBar.scss';
 
 class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <nav>
@@ -24,17 +20,17 @@ class SearchBar extends React.Component {
           </div>
           <div className='navlinks'>
             <div className='glyph-container'>
-              <a>
+              <a href='/'>
                 <span className='explore-glyph' />
               </a>
             </div>
             <div className='glyph-container'>
-              <a>
+              <a href='/'>
                 <span className='heart-glyph' />
               </a>
             </div>
             <div className='glyph-container'>
-              <a>
+              <a href='/'>
                 <span className='profile-glyph' />
               </a>
             </div>

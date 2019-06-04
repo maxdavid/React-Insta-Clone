@@ -13,7 +13,7 @@ function App() {
       <main role='main'>
         <section className='social-feed'>
           {dummyData.map((post) => (
-            <PostContainer data={post} />
+            <PostContainer data={post} key={post.id} />
           ))}
         </section>
       </main>
