@@ -10,8 +10,35 @@ class PostContainer extends React.Component {
     super(props);
     this.state = {
       postData: props.postData,
-      userData: props.userData
+      userData: props.userData,
+      liked: false,
+      bookmarked: false
     }
+  }
+
+  toggleLike = () => {
+    this.setState({liked: !this.state.liked});
+  }
+
+  toggleBookmark = () => {
+    this.setState({bookmarked: !this.state.bookmarked});
+  }
+
+  componentDidMount = () => {
+    if (localStorage.getItem(this.state.postData.id)) {
+      const locStor = JSON.parse(localStorage.getItem(this.state.postData.id));
+      this.setState({
+        liked: locStor.liked,
+        bookmarked: locStor.bookmarked
+      })
+    } 
+  }
+
+  componentDidUpdate = () => {
+    localStorage.setItem(this.state.postData.id, JSON.stringify({
+      liked: this.state.liked,
+      bookmarked: this.state.bookmarked
+    }));
   }
 
   render() {
@@ -37,8 +64,8 @@ class PostContainer extends React.Component {
         </div>
         
         <div className='interaction-buttons'>
-          <button>
-            <span className='heart-glyph' />
+          <button onClick={this.toggleLike}>
+            <span className={this.state.liked ? 'heart-liked-glyph':'heart-glyph'} />
           </button>
           <button>
             <span className='comment-glyph' />
@@ -46,8 +73,8 @@ class PostContainer extends React.Component {
           <button>
             <span className='share-glyph' />
           </button>
-          <button className='right-align'>
-            <span className='bookmark-glyph' />
+          <button className='right-align' onClick={this.toggleBookmark}>
+            <span className={this.state.bookmarked ? 'bookmark-true-glyph':'bookmark-glyph'} />
           </button>
         </div>
 

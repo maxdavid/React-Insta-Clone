@@ -80,6 +80,12 @@
         background-position-y: -125px;
       }
 
+      .heart-liked-glyph {
+        @extend %interaction-glyph;
+        background-position-x: -263px;
+        background-position-y: -100px;
+      }
+
       .comment-glyph {
         @extend %interaction-glyph;
         background-position-x: -50px;
@@ -95,6 +101,12 @@
       .bookmark-glyph {
         @extend %interaction-glyph;
         background-position-x: -100px;
+        background-position-y: -274px;
+      }
+
+      .bookmark-true-glyph {
+        @extend %interaction-glyph;
+        background-position-x: -25px;
         background-position-y: -274px;
       }
 
