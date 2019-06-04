@@ -23,3 +23,28 @@ input {
     opacity: 0.8;
   }
 }
+
+button {
+  background: 0 0;
+  border: 0;
+  cursor: pointer;
+}
+
+main {
+  margin: 0 auto;
+  padding-top: 60px;
+  width: 935px;
+
+  display: flex;
+  flex-direction: row;
+  
+  .social-feed {
+    width: 614px;
+    margin-right: 28px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}

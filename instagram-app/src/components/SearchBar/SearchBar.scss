@@ -37,12 +37,12 @@ nav {
 
         div {
           background-image: url(../../assets/sprite-glyphs.png);
-          background-size: 312px 298px;
+          background-size: 337px 298px;
           background-repeat: no-repeat;
         }
 
         .glyph {
-          background-position: -50px -199px;
+          background-position: -125px -199px;
           width: 24px;
           height: 24px;
         }
@@ -152,7 +152,7 @@ nav {
 
       span {
         background-image: url(../../assets/sprite-glyphs.png);
-        background-size: 312px 298px;
+        background-size: 337px 298px;
         background-repeat: no-repeat;
 
         width: 24px;
@@ -161,15 +161,15 @@ nav {
       }
 
       .explore-glyph {
-        background-position: -288px -175px;
+        background-position: 0px -274px;
       }
 
       .heart-glyph {
-        background-position: -263px -50px;
+        background-position: -263px -125px;
       }
 
       .profile-glyph {
-        background-position: -175px -224px;
+        background-position: -263px 0px;
       }
 
     }
