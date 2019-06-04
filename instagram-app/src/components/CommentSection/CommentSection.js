@@ -2,6 +2,7 @@ import React from 'react';
 import './CommentSection.scss';
 
 import * as moment from 'moment';
+import PropTypes from 'prop-types';
 
 import Comment from './Comment';
 
@@ -38,6 +39,11 @@ class CommentSection extends React.Component {
     )
 
   }
+}
+
+CommentSection.propTypes = {
+  comments: PropTypes.arrayOf(PropTypes.object),
+  timestamp: PropTypes.string
 }
 
 export default CommentSection;

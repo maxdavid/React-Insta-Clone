@@ -1,6 +1,8 @@
 import React from 'react';
 import './PostContainer.scss';
 
+import PropTypes from 'prop-types';
+
 import CommentSection from '../CommentSection/CommentSection';
 
 class PostContainer extends React.Component {
@@ -41,6 +43,18 @@ class PostContainer extends React.Component {
       </article>
     )
   }
+}
+
+PostContainer.propTypes = {
+  data: PropTypes.shape({
+    id: PropTypes.string,
+    username: PropTypes.string,
+    thumbnailUrl: PropTypes.string,
+    imageUrl: PropTypes.string,
+    likes: PropTypes.number,
+    timestamp: PropTypes.string,
+    comments: PropTypes.arrayOf(PropTypes.object)
+  })
 }
 
 export default PostContainer;
