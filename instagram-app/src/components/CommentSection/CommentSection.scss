@@ -50,17 +50,15 @@
       justify-content: space-between;
       align-items: center;
 
-      &:not(:focus-within) {
-        button {
-          opacity: 0.3;
+      input {
+        flex-grow: 1;
+
+        &::placeholder {
+          opacity: 0.5;
         }
       }
 
-      input {
-        flex-grow: 1;
-      }
-
-      button {
+      %button {
         flex-grow: 0;
         height: 100%;
         color: #3897f0;
@@ -68,6 +66,18 @@
         font-size: 1rem;
         line-height: 18px;
         outline: none;
+      }
+
+      .button-inactive {
+        @extend %button;
+        opacity: 0.3;
+        cursor: default;
+      }
+
+      .button-active {
+        @extend %button;
+        opacity: 1;
+        cursor: pointer;
       }
     }
   }

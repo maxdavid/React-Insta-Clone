@@ -10,8 +10,10 @@ class CommentSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      userData: props.userData,
       comments: props.comments,
-      timestamp: props.timestamp
+      timestamp: props.timestamp,
+      newComment: ''
     }
   }
 
@@ -30,14 +32,33 @@ class CommentSection extends React.Component {
         </div>
 
         <div className='post-comment'>
-          <form>
-            <input type='text' placeholder='Comment...' />
-            <button>Post</button>
+          <form onSubmit={this.addNewComment}>
+            <input type='text' placeholder='Comment...' value={this.state.newComment} onChange={this.handleNewCommentChange} />
+            <button className={this.state.newComment ? 'button-active' : 'button-inactive'}>Post</button>
           </form>
         </div>
       </div>
     )
+  }
 
+  handleNewCommentChange = (event) => {
+    this.setState({
+      newComment: event.target.value
+    });
+  }
+
+  addNewComment = (event) => {
+    event.preventDefault();
+    if (this.state.newComment) {
+      this.setState({
+        comments: [...this.state.comments, {
+          id: Date.now(),
+          username: this.state.userData.username,
+          text: this.state.newComment
+        }],
+        newComment: ''
+      });
+    }
   }
 }
 

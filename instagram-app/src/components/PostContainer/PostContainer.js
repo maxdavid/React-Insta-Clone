@@ -8,28 +8,32 @@ import CommentSection from '../CommentSection/CommentSection';
 class PostContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props.data;
+    this.state = {
+      postData: props.postData,
+      userData: props.userData
+    }
   }
 
   render() {
+    const {username, thumbnailUrl, imageUrl, comments, timestamp} = this.state.postData;
     return (
       <article className='post-container'>
         <header>
           <div className='poster-avatar'>
             <a href='/'>
-              <img src={this.state.thumbnailUrl} alt="{this.state.username}'s profile picture" />
+              <img src={thumbnailUrl} alt="{username}'s profile picture" />
             </a>
           </div>
           <div className='poster-handle'>
             <h2>
-              <a href='/' title={this.state.username}>
-                {this.state.username}
+              <a href='/' title={username}>
+                {username}
               </a>
             </h2>
           </div>
         </header>
         <div className='post-image'>
-          <img src={this.state.imageUrl} alt="{this.state.username}'s image post" />
+          <img src={imageUrl} alt="{username}'s image post" />
         </div>
         
         <div className='interaction-buttons'>
@@ -38,7 +42,7 @@ class PostContainer extends React.Component {
           </button>
         </div>
 
-      <CommentSection comments={this.state.comments} timestamp={this.state.timestamp} />
+      <CommentSection userData={this.state.userData} comments={comments} timestamp={timestamp} />
 
       </article>
     )
