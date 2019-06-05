@@ -1,10 +1,7 @@
 import React from 'react';
 import './App.scss';
 
-import SearchBar from './components/SearchBar/SearchBar';
-import PostContainer from './components/PostContainer/PostContainer';
-
-import dummyData from './assets/dummy-data';
+import PostsPage from './components/PostContainer/PostsPage';
 
 class App extends React.Component {
   constructor() {
@@ -19,14 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <section>
-        <SearchBar />
-        <main role='main'>
-          <section className='social-feed'>
-            {dummyData.map((post) => (
-              <PostContainer postData={post} userData={this.state.userData} key={post.id} />
-            ))}
-          </section>
-        </main>
+        <PostsPage userData={this.userData} />
       </section>
     );
   }
