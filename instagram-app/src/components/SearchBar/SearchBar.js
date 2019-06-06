@@ -2,6 +2,13 @@ import React from 'react';
 import './SearchBar.scss';
 
 class SearchBar extends React.Component {
+  logout() {
+    let userData = JSON.parse(localStorage.getItem('userData'));
+    userData.loggedIn = false;
+    localStorage.setItem('userData', JSON.stringify(userData));
+    document.location.reload();
+  }
+
   render() {
     return (
       <nav>
@@ -30,7 +37,7 @@ class SearchBar extends React.Component {
               </a>
             </div>
             <div className='glyph-container'>
-              <a href='/'>
+              <a href='/' onClick={this.logout}>
                 <span className='profile-glyph' />
               </a>
             </div>
