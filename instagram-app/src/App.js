@@ -9,9 +9,7 @@ class App extends React.Component {
   render() {
     const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)(Login);
     return (
-      <section>
-        <ComponentFromWithAuthenticate userData={this.userData} />
-      </section>
+      <ComponentFromWithAuthenticate userData={this.userData} />
     );
   }
 }
