@@ -1,0 +1,118 @@
+.post-container {
+  background-color: white;
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 3px;
+
+  width: 100%;
+  margin-bottom: 60px;
+
+  header {
+    width: 100%;
+    height: 60px;
+    padding: 16px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    .poster-avatar {
+      display: block;
+
+      a {
+        img {
+          clip-path: circle(16px at center);
+          width: 32px;
+          Height: 32px;
+        }
+      }
+    }
+
+    .poster-handle {
+      margin-left: 16px;
+
+      h2 {
+        font-weight: 600;
+        line-height: 18px;
+
+        a {
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+  }
+
+  .post-image {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .interaction-buttons {
+    width: 100%;
+    height: 40px;
+    padding: 0 8px;
+    margin-top: 4px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    button {
+      width: 40px;
+      height: 40px;
+      outline: none;
+
+      %interaction-glyph {
+        background-image: url('../../assets/sprite-glyphs.png');
+        background-size: 337px 298px;
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+      }
+
+      .heart-glyph {
+        @extend %interaction-glyph;
+        background-position-x: -263px;
+        background-position-y: -125px;
+      }
+
+      .heart-liked-glyph {
+        @extend %interaction-glyph;
+        background-position-x: -263px;
+        background-position-y: -100px;
+      }
+
+      .comment-glyph {
+        @extend %interaction-glyph;
+        background-position-x: -50px;
+        background-position-y: -199px;
+      }
+
+      .share-glyph {
+        @extend %interaction-glyph;
+        background-position-x: -225px;
+        background-position-y: -274px;
+      }
+
+      .bookmark-glyph {
+        @extend %interaction-glyph;
+        background-position-x: -100px;
+        background-position-y: -274px;
+      }
+
+      .bookmark-true-glyph {
+        @extend %interaction-glyph;
+        background-position-x: -25px;
+        background-position-y: -274px;
+      }
+
+      &.right-align {
+        margin-left: auto;
+      }
+    }
+  }
+}
